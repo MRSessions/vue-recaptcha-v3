@@ -44,7 +44,6 @@ export function VueReCaptcha (Vue: typeof _Vue, options: IReCaptchaOptions): voi
     Vue.prototype.$loadCaptcha = async (siteKey: string) => {
       const options = Vue.prototype.$captchaOptions
       options.siteKey = siteKey
-      console.log(options)
       await plugin.initializeReCaptcha(options).then((wrapper) => {
         thenAction(wrapper)
       }).catch((error) => {
